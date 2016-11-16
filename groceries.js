@@ -1,13 +1,24 @@
+var myList = [];
+
 function removeParentListItem()
 {
   var mom = this.parentNode;
   var grandma = mom.parentNode;
+  var itemRemove = mom.firstChild.textContent;
+  var itemIndex = myList.indexOf(itemRemove);
+  myList.splice(itemIndex,1);
+  console.log(myList);
   grandma.removeChild(mom);
 }
 
 function addItem()
 {
   var input = document.getElementById("newItem").value;
+  if(myList.indexOf(input) == -1)
+  {
+    myList.push(input);
+    console.log(myList);
+  }
   var list = document.getElementById("listDisplay");
   var item = document.createElement("li");
   var itemName = document.createTextNode(input);
