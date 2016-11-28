@@ -1,5 +1,21 @@
 var myList = [];
 
+function saveList()
+{
+  var listString = myList.toString();
+  console.log(listString);
+  setCookie("list", listString, 1);
+}
+
+function clearList()
+{
+  document.getElementById("listDisplay").innerHTML = "";
+  myList = [];
+  console.log(myList);
+  var check = getCookie("list");
+  console.log(check);
+}
+
 function removeParentListItem()
 {
   var mom = this.parentNode;
