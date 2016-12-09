@@ -10,7 +10,6 @@ function loadCookieList()
   {
     displayItem(arrayCookie[i]);
   }
-
 }
 
 function displayItem(input)
